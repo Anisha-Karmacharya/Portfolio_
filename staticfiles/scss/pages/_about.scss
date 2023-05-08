@@ -1,0 +1,111 @@
+.about {
+  &__landing {
+    padding: 5em 0;
+    &__title {
+      font-size: var(--h1-font-size);
+      font-family: var(--medium-font);
+      padding-bottom: 1em;
+    }
+    &__description {
+      p {
+        text-align: justify;
+        line-height: 1.75em;
+        font-size: var(--normal-font-size);
+      }
+    }
+  }
+  &__edu-exp {
+    padding: 5em 0;
+    &--title {
+      font-size: var(--h2-font-size);
+      font-family: var(--medium-font);
+    }
+    .edu-exp {
+      &__datas {
+        border-bottom: 1px solid var(--first-color);
+        padding-bottom: 1.25em;
+      }
+      &__title {
+        font-size: var(--p-font-size);
+        font-family: var(--medium-font);
+        padding: 1em 0;
+        text-transform: capitalize;
+        // letter-spacing: 1px;
+      }
+      &__data {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        font-size: var(--normal-font-size);
+        padding-bottom: 0.75em;
+        text-transform: capitalize;
+        font-family: var(--regular-font);
+      }
+    }
+  }
+  .journey {
+    &__landing {
+      &--title {
+        font-size: var(--h2-font-size);
+        font-family: var(--medium-font);
+        line-height: 1.25em;
+        padding-bottom: 0.5em;
+      }
+      &--caption {
+        font-size: var(--p-font-size);
+        line-height: 1.25em;
+      }
+    }
+    .about__journey {
+      margin-top: 3rem;
+      .journey__card {
+        margin-top: 1em;
+        margin-bottom: 3em;
+        border-radius: 15px;
+        background-color: var(--first-color-alt);
+        // box-shadow: 0px 10px 15px 0px var(--first-color-transparent);
+        .card__image {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          border-top-right-radius: 15px;
+          border-top-left-radius: 15px;
+        }
+        .journey__details {
+          padding: 3em 1.5em;
+          display: flex;
+          column-gap: 15px;
+          text-align: left;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          .journey__year {
+            font-size: var(--big-font-size);
+            color: var(--first-color);
+            font-family: var(--medium-font);
+          }
+          .journey__title a {
+            color: var(--first-color);
+            font-size: var(--h2-font-size);
+            font-family: var(--regular-font);
+            text-transform: capitalize;
+          }
+          span {
+            font-size: var(--small-font-size);
+            color: var(--first-color);
+          }
+        }
+      }
+    }
+  }
+  .linkToWork {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 1em 2em 1em;
+    & p {
+      border-bottom: 1px solid var(--first-color);
+      padding: 5px;
+      font-size: var(--small-font-size);
+    }
+  }
+}

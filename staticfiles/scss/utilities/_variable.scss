@@ -1,0 +1,66 @@
+/*=============== FONTS ===============*/
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Syne:wght@500&display=swap");
+@font-face {
+  font-family: "Cerebri Light";
+  src: url('../fonts/CerebriSansPro-Light.ttf');
+}
+@font-face {
+  font-family: "Cerebri Medium";
+  src: url('../fonts/CerebriSansPro-Medium.ttf');
+}
+@font-face {
+  font-family: "Cerebri Regular";
+  src: url('../fonts/CerebriSansPro-Regular.ttf');
+}
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 5rem;
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #171717;
+  --first-color-transparent: #1717174f;
+  --first-color-alt-transparent: #f4f4f485;
+  --first-color-alt: #efefef;
+  --first-color-light: #d6d6d6;
+  --first-color-dark: #000000;
+  --title-color: #171717;
+  --text-color: #000000;
+  --text-color-alt: #797979;
+  --body-color: #dbdbdb;
+  --container-color: #dbdbdb;
+  --background-color: #f4f4f438;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --light-font: "Cerebri Light";
+  --medium-font: "Cerebri Medium";
+  --regular-font: "Cerebri Regular";
+  --big-font-size: 4.5em;
+  --h1-font-size: 3.05em;
+  --h2-font-size: 2.5em;
+  --h3-font-size: 1.75em;
+  --p-font-size: 1.5em;
+  --normal-font-size: 1.05em;
+  --small-font-size: 0.95em;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 5.5em;
+    --h1-font-size: 3.5em;
+    --h3-font-size: 2em;
+    --p-font-size: 1.75em;
+    --normal-font-size: 1.115em;
+    --small-font-size: 1em;
+  }
+}
+@media screen and (min-width: 1350px){
+  :root {
+    --big-font-size: 6.5em;
+    --h1-font-size:4em;
+  }
+}

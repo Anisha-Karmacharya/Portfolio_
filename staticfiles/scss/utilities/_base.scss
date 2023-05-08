@@ -1,0 +1,117 @@
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--light-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.5s; /*For animation dark mode*/
+  // cursor: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+main {
+  overflow: hidden;
+  padding: var(--header-height) 0 0 0;
+  font-family: var(--light-font);
+  min-height: calc(100vh - 160px);
+}
+
+.container{
+  padding: 0 1em;
+}
+.button{
+  display: inline-block;
+  background: transparent;
+  color: var(--first-color);
+  padding: 0.5em 2em;
+  font-size: var(--small-font-size);
+  border-radius: 3rem;
+  transition: .3s;
+  border: 1px solid var(--first-color);
+  margin-top: 3%;
+  font-family: var(--medium-font);
+  &:hover{
+      background-color: var(--first-color-alt);
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --first-color: #f4f4f4;
+  --first-color-transparent: #f4f4f442;
+  --first-color-alt-transparent: #17171770;
+  --first-color-alt: #242424;
+  --first-color-dark: #ffffff;
+  --first-color-light: #171717;
+  --title-color: hsl(152, 4%, 95%);
+  --text-color: hsl(152, 4%, 75%);
+  --text-color-alt: #a8a8a8;
+  --body-color: #171717;
+  --container-color: #171717;
+  --background-color: #17171780;
+}
+
+.cursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid white;
+  // transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  mix-blend-mode: difference;
+  // transform: translate(calc(-50% + 15px), -50%);
+}
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: white;
+  // opacity: .3;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  // transition: width .3s, height .3s, opacity .3s;
+  mix-blend-mode: difference;
+}
+

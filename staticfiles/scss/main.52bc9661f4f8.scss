@@ -1,0 +1,10 @@
+@use './utilities/base';
+@use './utilities/variable';
+@use './layout/nav';
+@use './layout/footer';
+@use './pages/home';
+@use './pages/about';
+@use './pages/journeyDetails';
+@use './pages/work';
+@use './pages/workDetail';
+@use './utilities/mediaQueries';
