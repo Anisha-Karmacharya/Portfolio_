@@ -1,0 +1,10 @@
+{% extends 'myPortfolio/base.html' %} {% block content %}
+<div class="work container">
+  {% include 'myPortfolio/filterNav.html' %}
+  <div class="work__container">
+    {% for work in projects %}
+      {% include 'myPortfolio/workCard.html' %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

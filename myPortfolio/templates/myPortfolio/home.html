@@ -1,0 +1,102 @@
+{% extends 'myPortfolio/base.html' %} {% block content %}
+<div class="home">
+  {% for h in home %}
+  <!-- landing div -->
+  <section class="home__landing container">
+    <div class="landing__image image">
+      {% if h.image %}
+      <img src="{{h.image.url}}" alt="" class="img"/>
+      {% endif %}
+    </div>
+    <div class="landing__introduction">
+      <p class="name">{{h.name}}</p>
+      <p class="brief__caption">{{h.self_caption}}</p>
+      <p class="self__description">{{h.self_description}}</p>
+      <div class="scroll-button">
+        <a href="#homeExplore">
+          <button class="scrollButton button">
+            Scroll to discover <i class="uil uil-arrow-down"></i>
+          </button>
+        </a>
+      </div>
+      <div class="home__social">
+        <div class="home__social-links">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="home__social-link"
+          >
+            <i class="uil uil-linkedin-alt"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="home__social-link"
+          >
+            <i class="uil uil-dribbble"></i>
+          </a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            class="home__social-link"
+          >
+            <i class="uil uil-behance"></i>
+          </a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            class="home__social-link"
+          >
+            <i class="uil uil-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- explore more div -->
+  <section class="home__explore container" id="homeExplore">
+    <div class="explore__data">
+      <p class="exploreTitle">{{h.explore_title}}</p>
+      <p class="exploreDescription">{{h.explore_description}}</p>
+      <div class="explore-button">
+        <a href="{% url 'portfolio-work' %}">
+          <button class="exploreButton button">Explore my work</button>
+        </a>
+      </div>
+    </div>
+    <div class="explore__image image">
+      {% if h.explore_image %}
+      <img src="{{h.explore_image.url}}" alt="" class="img"/>
+      {% endif %}
+    </div>
+  </section>
+  <!-- Featured project div -->
+  <p class="carousel-title">Featured Projects</p>
+  <section class="owl-carousel home__featured">
+    {% for project in featured %}
+      <div class="slider">
+        <div >
+          <p class="slider-title">{{project.title}}</p>
+        </div>
+        {% if project.product_Image %}
+        <div class="slider-img">
+          <a href="{% url 'work-detail' project.title %}">
+            <img src="{{project.product_Image.url}}" alt="Project Image" />
+          </a>
+        </div>
+        {% endif %}
+        <div class="slider-info">
+          <li class="tag-title">Service Provided</li>
+          <ul class="slider-tags">
+            {% for tag in project.project_Tag.all %}
+            <li class="slider-tag">{{tag}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+  {% endfor %}
+</div>
+{% endblock content %}

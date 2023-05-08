@@ -1,0 +1,51 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  gap: 3em;
+  transition: 0.4s;
+  padding: 1.5em 1.5em 3em 1.5em;
+  border-top: 1px solid var(--first-color-alt-transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--first-color-light) 80%,
+    #ffffff 20%
+  );
+
+  &__logo {
+    font-family: var(--medium-font);
+    font-size: var(--normal-font-size);
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    transition: 0.3s;
+    a {
+      color: var(--first-color);
+    }
+  }
+  .information {
+    display: flex;
+    gap: 5px;
+    color: var(--first-color);
+    flex-wrap: wrap;
+    .informationAddress {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--first-color-transparent);
+    }
+    .informationAddress h3,
+    .informationContact h3 {
+      font-size: var(--normal-font-size);
+      font-family: var(--regular-font);
+      padding-bottom: 5px;
+    }
+    .informationAddress p,
+    .informationContact p {
+      font-size: var(--small-font-size);
+      font-family: var(--light-font);
+      padding: 5px 0;
+    }
+  }
+}

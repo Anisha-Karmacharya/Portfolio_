@@ -1,0 +1,17 @@
+{% extends 'myPortfolio/base.html' %} 
+    {% block content %}
+    <div class="detailJourney container">
+        <div class="detailJourney__title">
+            <h2>{{journey.journey_Title}}</h2>
+            <span>{{ journey.journey_Year|date:"Y" }}</span>
+        </div>
+        <div class="image">
+            {% if journey.journey_Image %}
+            <img  src="{{journey.journey_Image.url}}" class="img">
+            {% endif %}
+        </div>
+        <div class="detailJourney__description">
+            <p>{{journey.journey_Description}}</p>
+        </div>
+    </div>
+{% endblock content %}

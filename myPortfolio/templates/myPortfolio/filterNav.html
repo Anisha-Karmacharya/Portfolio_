@@ -1,0 +1,13 @@
+<h1 class="work__title">My Works</h1>
+<div class="work__filter">
+  <div>
+    {% url 'portfolio-work' as work_url %}
+    <a href="{% url 'portfolio-work'%}" class="{% if request.path == work_url %}active-filterlink{% endif %} ">All</a>
+  </div>
+  {% for t in tags %}
+  <div>
+    {% url 'work-filter' t.name as filter_url%}
+    <a href="{% url 'work-filter' t.name%}" class="{% if request.path == filter_url %}active-filterlink{% endif %}">{{t}}</a>
+  </div>
+  {% endfor%}
+</div>

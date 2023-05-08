@@ -1,0 +1,19 @@
+<div class="work-box-content">
+    <a href="{% url 'work-detail' work.title %}">
+      <div class="work-box-content-overlay"></div>
+      {% if work.product_Image %}
+      <img class="work-box-content-image" src="{{work.product_Image.url}}" />
+      {% endif %}
+      <div class="work-box-content-details work-box-fadeIn-bottom">
+        <p class="work-box-content-year">{{work.year | date:"Y-m-d"}}</p>
+        <h3 class="work-box-content-title">
+          <a href="{% url 'work-detail' work.title %}">{{work.title}}</a>
+        </h3>
+        <div class="work-box-content-tags">
+          {% for tag in work.project_Tag.all %}
+          <div class="work-box-content-tag">{{tag}}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </a>
+  </div>

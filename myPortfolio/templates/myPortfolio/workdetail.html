@@ -1,0 +1,43 @@
+{% extends 'myPortfolio/base.html' %} {% block content %}
+<div class="workDetails container">
+  <div class="workInfo">
+    <h2 class="workDetails-title">{{work.title}}</h2>
+    <div class="workDetails-briefData">
+      <div class="workdetails-brief">
+        <h3 class="workdetails-brief--title">Service Provided</h3>
+        <div class="workdetails-brief--workTags">
+          {% for tag in worktags %}
+          <p class="workdetails-brief--value">{{tag}}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="workdetails-brief">
+        <h3 class="workdetails-brief--title">Date</h3>
+        <p class="workdetails-brief--value">{{work.year|date:"F jS Y"}}</p>
+      </div>
+    </div>
+  </div>
+  
+ <div class="workDetails-Information {% if  work.project_description %}grid{% endif %}">
+  <div class="workDetails-bannerImage image">
+    <img src="{{work.product_Image.url}}" class="{% if  work.project_description %}grid-img{% else %}img{% endif %}" />
+  </div>
+  {% if work.project_description %}
+  <div class="workDetails-description">
+    <p>{{work.project_description| safe}}</p>
+  </div>
+  {% endif %}
+ </div>
+ {% if work.project_description %}
+ <div class="workDetails-additionInfos">
+  <div class="workDetails-additionInfo">{{work.project_challenges| safe}}</div>
+  <div class="workDetails-additionInfo">{{work.project_solution| safe}}</div>
+ </div>
+  {% endif %}
+  <div class="workDetails-additionalImages">
+    {% for photo in workImage %}
+    <img class="workDetails-additionalImage" src="{{photo.images.url}}" />
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
